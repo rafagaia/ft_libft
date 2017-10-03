@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**ft_split(char **split, const char *s, char c, unsigned int *j)
+static char		**ft_split(char **split, const char *s, char c, unsigned int *j)
 {
 	int				i;
 	unsigned int	len;
@@ -37,7 +37,7 @@ char	**ft_split(char **split, const char *s, char c, unsigned int *j)
 	return (split);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char			**split;
 	unsigned int	num_words;

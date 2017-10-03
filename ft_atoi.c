@@ -11,32 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define INT_MIN -(2^31)
-#define INT_MAX ((2^31) - 1)
 
 int		ft_atoi(const char *str)
 {
 	int		num;
-	int		is_neg;
+	int		sign;
 	char	*s;
 
 	num = 0;
-	is_neg = 1;
+	sign = 1;
 	s = (char *)str;
-	while (*s < 27 || *s == ' ' ||
-			*s == 127 || *s == '+')
+	while (*s == '\n' || *s == '\t' || *s == '\r'
+			|| *s == '\v' || *s == '\f' || *s == ' ')
 		s++;
-	if (*s == '-' && s++)
-		is_neg = -1;
-	while (*s)
-	{
-		if (*s <= '9' && *s >= '0')
-		{
-			num = (num * 10) + (*s - '0');
-			s++;
-		}
-		else
-			return (is_neg * num);
-	}
-	return (is_neg * num);
+	if (*s == '-')
+		sign = -1;
+	if (*s == '-' || *s == '+')
+		s++;
+	while (*s && ft_isdigit(*s))
+		num = (num * 10) + (*s++ - '0');
+	return (sign * num);
 }

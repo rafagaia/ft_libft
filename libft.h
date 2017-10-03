@@ -112,7 +112,6 @@ size_t				ft_strnwords_split(const char *s, char c);
 */
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-
 /*
 ** Data Structures
 */

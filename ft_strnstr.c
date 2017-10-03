@@ -14,29 +14,20 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char *b;
-	char *l;
-	char *save_b;
+	size_t		lit_len;
 
-	b = (char *)big;
-	l = (char *)little;
-	save_b = b;
-	if (ft_strlen(little) == 0)
-		return (b);
-	while (*save_b && len--)
+	lit_len = ft_strlen(little);
+	if (lit_len == 0)
+		return ((char*)big);
+	while (*big && lit_len <= len)
 	{
-		if (*b == *l)
+		if (*big == *little)
 		{
-			l++;
-			if (*l == '\0')
-				return (b - ft_strlen(little) + 1);
+			if (ft_strncmp(big, little, lit_len) == 0)
+				return ((char*)big);
 		}
-		else
-		{
-			l = (char *)little;
-			b = save_b++;
-		}
-		b++;
+		big++;
+		len--;
 	}
 	return (NULL);
 }

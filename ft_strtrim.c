@@ -44,12 +44,6 @@ char		*ft_strtrim(char const *s)
 	s_front = trim_forward(s);
 	s_back = trim_back((s + ft_strlen(s) - 1), s_front);
 	if (s_front <= s_back)
-	{
-		if ((trim = ft_strnew(s_back - s_front + 1)))
-		{
-			while (s_front <= s_back)
-				trim[i++] = *s_front++;
-		}
-	}
+		trim = ft_strsub(s_front, 0, (s_back - s_front + 1));
 	return (trim);
 }
