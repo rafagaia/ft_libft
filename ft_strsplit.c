@@ -12,44 +12,31 @@
 
 #include "libft.h"
 
-static char		**ft_split(char **split, const char *s, char c, unsigned int *j)
-{
-	int				i;
-	unsigned int	len;
-	unsigned int	start;
-
-	i = 0;
-	len = 0;
-	start = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			start = i;
-			while (s[i] && s[i++] != c)
-				len++;
-			split[(*j)++] = ft_strsub(s, start, len);
-			len = 0;
-		}
-		else
-			i++;
-	}
-	return (split);
-}
-
 char			**ft_strsplit(char const *s, char c)
 {
 	char			**split;
-	unsigned int	num_words;
-	unsigned int	j;
+	char			*start;
+	char			**ret;
 
-	if (s == NULL)
+	if (!s || !c)
 		return (NULL);
-	j = 0;
-	num_words = ft_strnwords_split(s, c);
-	if (!(split = (char**)malloc(sizeof(char*) * (num_words + 1))))
+	start = (char*)s;
+	if (!(split = (char**)malloc(sizeof(char*) *
+					((ft_strnwords_split(s, c)) + 1))))
 		return (NULL);
-	split = ft_split(split, s, c, &j);
-	split[j] = (char*)0;
-	return (split);
+	ret = split;
+	while (*s)
+	{
+		if (*s == c)
+		{
+			if (start != s)
+				*(split++) = ft_strsub(start, 0, s - start);
+			start = (char*)s + 1;
+		}
+		++s;
+	}
+	if (start != s)
+		*(split++) = ft_strsub(start, 0, s - start);
+	*split = NULL;
+	return (ret);
 }

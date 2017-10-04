@@ -12,38 +12,33 @@
 
 #include "libft.h"
 
-static char	*trim_forward(char const *s)
+static int	ft_isblank_trim(int c)
 {
-	while (ft_iswhitespace(*s))
-		s++;
-	return ((char *)s);
-}
-
-static char	*trim_back(char const *s, char *front)
-{
-	while (ft_iswhitespace(*s) && s > front)
-		s--;
-	return ((char *)s);
+	return ((c == ' ' || c == '\t' || c == '\n') ? 1 : 0);
 }
 
 char		*ft_strtrim(char const *s)
 {
-	char	*s_front;
-	char	*s_back;
-	char	*trim;
-	int		i;
+	char	*str_trim;
+	int		index_end;
+	size_t	i;
+	size_t	len;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	if (!*s)
-		return ((char *)s);
-	if (ft_strblank(s))
-		return ("");
-	trim = NULL;
+	index_end = 0;
 	i = 0;
-	s_front = trim_forward(s);
-	s_back = trim_back((s + ft_strlen(s) - 1), s_front);
-	if (s_front <= s_back)
-		trim = ft_strsub(s_front, 0, (s_back - s_front + 1));
-	return (trim);
+	len = ft_strlen(s);
+	if (!(str_trim = ft_strnew(len)))
+		return (NULL);
+	while (i < len)
+	{
+		if (!index_end && ft_isblank_trim(s[i]))
+			i++;
+		else
+			str_trim[index_end++] = s[i++];
+	}
+	while (ft_isblank_trim(str_trim[--index_end]))
+		str_trim[index_end] = '\0';
+	return (str_trim);
 }
