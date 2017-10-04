@@ -34,5 +34,7 @@ size_t	ft_strnwords_split(const char *s, char c)
 			num_words++;
 		i++;
 	}
+	if (!num_words && s[0] != c)
+		num_words = 1;
 	return (num_words);
 }

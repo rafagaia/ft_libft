@@ -5,38 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 20:43:15 by rgaia             #+#    #+#             */
-/*   Updated: 2017/09/29 23:34:29 by rgaia            ###   ########.fr       */
+/*   Created: 2017/10/04 13:10:17 by rgaia             #+#    #+#             */
+/*   Updated: 2017/10/04 13:16:34 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	char			**split;
-	char			*start;
-	char			**ret;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	**split;
 
-	if (!s || !c)
+	i = 0;
+	k = 0;
+	if (!s || !(split = (char **)malloc(sizeof(char *) *
+						(ft_strnwords_split(s, c) + 1))))
 		return (NULL);
-	start = (char*)s;
-	if (!(split = (char**)malloc(sizeof(char*) *
-					((ft_strnwords_split(s, c)) + 1))))
-		return (NULL);
-	ret = split;
-	while (*s)
+	while (i < ft_strnwords_split(s, c))
 	{
-		if (*s == c)
-		{
-			if (start != s)
-				*(split++) = ft_strsub(start, 0, s - start);
-			start = (char*)s + 1;
-		}
-		++s;
+		if (!(split[i] = (char *)malloc(sizeof(char) *
+							(ft_strlen(&s[k] + 1)))))
+			return (NULL);
+		j = 0;
+		while (s[k] == c)
+			k++;
+		while (s[k] && s[k] != c)
+			split[i][j++] = s[k++];
+		split[i][j] = '\0';
+		i++;
 	}
-	if (start != s)
-		*(split++) = ft_strsub(start, 0, s - start);
-	*split = NULL;
-	return (ret);
+	split[i] = NULL;
+	return (split);
 }
