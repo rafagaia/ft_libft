@@ -6,7 +6,7 @@
 #    By: rgaia <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/19 21:33:28 by rgaia             #+#    #+#              #
-#    Updated: 2017/09/20 16:27:56 by rgaia            ###   ########.fr        #
+#    Updated: 2017/10/09 23:31:44 by rgaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strncat.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 		ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
 		ft_strtrim.c ft_tolower.c ft_toupper.c ft_isblank.c ft_islower.c ft_isupper.c \
-		ft_isdelim.c ft_numdigit.c ft_iswhitespace.c ft_strblank.c ft_strnwords_split.c \
+		ft_isdelim.c ft_numdigit.c ft_iswhitespace.c ft_strblank.c ft_strnword.c \
 
 FLAGS = -c -Wall -Werror -Wextra
 
