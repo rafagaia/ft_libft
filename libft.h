@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2017/10/09 20:22:55 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/10/09 23:29:39 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-int					ft_strnwords_split(const char *s, char c);
+int					ft_strnword(const char *s, char c);
 /*
 ** FT_MEM:
 */
