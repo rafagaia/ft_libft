@@ -3,42 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 12:25:33 by rgaia             #+#    #+#             */
-/*   Updated: 2017/09/29 21:57:14 by rgaia            ###   ########.fr       */
+/*   Created: 2016/09/27 00:50:46 by jrameau           #+#    #+#             */
+/*   Updated: 2017/10/09 19:50:06 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isblank_trim(int c)
+static int	has_whitespaces(char *str, int *i, size_t *j)
 {
-	return ((c == ' ' || c == '\t' || c == '\n') ? 1 : 0);
+	while (IS_SPACE(*(str + *i)))
+		(*i)++;
+	while (IS_SPACE(*(str + *j)))
+		(*j)--;
+	if (*i || *j < ft_strlen(str))
+		return (1);
+	return (0);
 }
 
 char		*ft_strtrim(char const *s)
 {
-	char	*str_trim;
-	int		index_end;
-	size_t	i;
-	size_t	len;
+	int		i;
+	size_t	j;
+	int		k;
+	char	*new_str;
+	size_t	new_size;
 
 	if (!s)
 		return (NULL);
-	index_end = 0;
 	i = 0;
-	len = ft_strlen(s);
-	if (!(str_trim = ft_strnew(len)))
+	k = 0;
+	j = ft_strlen(s) - 1;
+	if (!has_whitespaces((char *)s, &i, &j) || !ft_strlen(s))
+		return ((char *)s);
+	new_size = (i == (int)ft_strlen(s)) ? 0 : ft_strlen(s) - (size_t)i - \
+				(ft_strlen(s) - j);
+	new_str = ft_strnew(new_size + 1);
+	if (!new_str)
 		return (NULL);
-	while (i < len)
-	{
-		if (!index_end && ft_isblank_trim(s[i]))
-			i++;
-		else
-			str_trim[index_end++] = s[i++];
-	}
-	while (ft_isblank_trim(str_trim[--index_end]))
-		str_trim[index_end] = '\0';
-	return (str_trim);
+	while (i <= (int)j)
+		*(new_str + k++) = *(s + i++);
+	return (new_str);
 }

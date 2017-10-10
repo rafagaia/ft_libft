@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2017/09/29 23:37:50 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/10/09 19:49:41 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define FALSE 0
 # define TRUE 1
+# define IS_SPACE(x) (x == ' ' || x == '\t' || x == '\r' || x == '\f') 
 
 typedef struct		s_list
 {
@@ -47,6 +48,8 @@ int					ft_iswhitespace(int c);
 int					ft_numdigit(int c);
 int					ft_isdelim(int c);
 int					ft_isblank(int c);
+int					ft_countwords(char const *str, char c);
+
 /*
 **	String
 */
