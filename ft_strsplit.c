@@ -6,7 +6,7 @@
 /*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 13:18:35 by jrameau           #+#    #+#             */
-/*   Updated: 2017/10/09 20:20:18 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/10/09 23:33:06 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ char			**ft_strsplit(char const *s, char c)
 	char	**str2;
 
 	if (!s || !(str2 = (char **)malloc(sizeof(*str2) *
-		(ft_strnwords_split(s, c) + 1))))
+		(ft_strnword(s, c) + 1))))
 		return (NULL);
 	i = -1;
 	j = 0;
-	while (++i < ft_strnwords_split(s, c))
+	while (++i < ft_strnword(s, c))
 	{
 		k = 0;
 		if (!(str2[i] = ft_strnew(get_word_len(&s[j], c) + 1)))
