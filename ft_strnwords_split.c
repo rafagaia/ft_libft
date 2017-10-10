@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 22:29:08 by rgaia             #+#    #+#             */
-/*   Updated: 2017/09/29 21:56:38 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/10/09 20:22:35 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Returns number of words in string s, delimited by c
 */
 
-size_t	ft_strnwords_split(const char *s, char c)
+int		ft_strnwords_split(const char *s, char c)
 {
 	size_t	num_words;
 	int		i;
@@ -36,5 +36,5 @@ size_t	ft_strnwords_split(const char *s, char c)
 	}
 	if (!num_words && s[0] != c)
 		num_words = 1;
-	return (num_words);
+	return ((int)num_words);
 }
