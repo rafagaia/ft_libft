@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2017/10/09 23:29:39 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/10/09 23:34:54 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int					ft_iswhitespace(int c);
 int					ft_numdigit(int c);
 int					ft_isdelim(int c);
 int					ft_isblank(int c);
-
 /*
 **	String
 */
