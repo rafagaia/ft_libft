@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2017/10/10 00:33:29 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/11/30 15:35:28 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_list
 **	Util
 */
 int					ft_atoi(const char *str);
+int					ft_abs(int c);
 int					ft_isalpha(int c);
 int					ft_islower(int c);
 int					ft_isupper(int c);
@@ -52,8 +53,10 @@ int					ft_isblank(int c);
 **	String
 */
 size_t				ft_strlen(const char *s);
+size_t				ft_strnlen(const char *s, char c);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, size_t len);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
@@ -79,6 +82,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 /*
 ** FT_Functions
 */
+char				*ft_chrsub(char *str, char out, char in);
 /*
 ** FT_UTIL:
 */
@@ -120,9 +124,10 @@ void				ft_memdel(void **ap);
 ** Linked Lists
 */
 t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
