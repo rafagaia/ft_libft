@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2017/12/08 18:33:19 by rgaia            ###   ########.fr       */
+/*   Updated: 2017/12/19 01:32:56 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ char				*ft_chrsub(char *str, char out, char in);
 /*
 ** FT_UTIL:
 */
+int					ft_printf(const char *format, ...);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);

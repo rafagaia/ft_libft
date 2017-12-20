@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 15:47:53 by rgaia             #+#    #+#             */
-/*   Updated: 2017/12/19 12:36:05 by rgaia            ###   ########.fr       */
+/*   Created: 2017/12/19 01:41:17 by rgaia             #+#    #+#             */
+/*   Updated: 2017/12/19 12:27:21 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		main(void)
 {
-	unsigned char	*str;
-
-	str = (unsigned char *)s;
-	while (n--)
-	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
-	}
-	return (NULL);
+	
+	return (0);
 }

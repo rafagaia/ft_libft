@@ -6,7 +6,7 @@
 #    By: rgaia <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/19 21:33:28 by rgaia             #+#    #+#              #
-#    Updated: 2017/12/08 19:19:54 by rgaia            ###   ########.fr        #
+#    Updated: 2017/12/19 01:40:33 by rgaia            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strtrim.c ft_tolower.c ft_toupper.c ft_isblank.c ft_islower.c ft_isupper.c \
 		ft_isdelim.c ft_numdigit.c ft_iswhitespace.c ft_strblank.c ft_strnword.c \
 		ft_strndup.c ft_chrsub.c ft_lstadd_back.c ft_abs.c ft_strdup_ff.c \
-		ft_strjoin_ff.c \
+		ft_strjoin_ff.c ft_printf/ft_printf.c \
 
 OFILES = $(SRC:.c=.o)
 
