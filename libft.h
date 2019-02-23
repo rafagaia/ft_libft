@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2018/01/08 19:35:58 by rgaia            ###   ########.fr       */
+/*   Updated: 2019/02/22 23:13:10 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include "get_next_line.h"
 
 # define FALSE 0
 # define TRUE 1
