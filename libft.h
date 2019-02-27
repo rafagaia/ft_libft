@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2019/02/22 23:13:10 by rgaia            ###   ########.fr       */
+/*   Updated: 2019/02/27 10:39:47 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ char				*ft_chrsub(char *str, char out, char in);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
+void				ft_puterror(char *str, int error);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
