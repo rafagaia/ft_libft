@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 10:36:27 by rgaia             #+#    #+#             */
-/*   Updated: 2019/02/27 10:38:40 by rgaia            ###   ########.fr       */
+/*   Updated: 2019/02/28 10:43:02 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 void	ft_puterror(char *str, int error)
 {
 	ft_putstr(str);
-	ft_putchar('\n');
 	exit(error);
 }
