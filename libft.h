@@ -6,7 +6,7 @@
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 10:56:18 by rgaia             #+#    #+#             */
-/*   Updated: 2019/02/27 10:39:47 by rgaia            ###   ########.fr       */
+/*   Updated: 2019/04/22 14:05:40 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ char				*ft_chrsub(char *str, char out, char in);
 ** FT_UTIL:
 */
 char				*ft_itoa(int n);
+char				*ft_itoa_base_unsigned(uintmax_t n, int base);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_puterror(char *str, int error);

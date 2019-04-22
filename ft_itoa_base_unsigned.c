@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base_unsigned.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgaia <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/18 15:02:05 by rgaia             #+#    #+#             */
-/*   Updated: 2019/04/22 00:19:41 by rgaia            ###   ########.fr       */
+/*   Created: 2019/04/22 14:06:10 by rgaia             #+#    #+#             */
+/*   Updated: 2019/04/22 14:23:07 by rgaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+char		*ft_itoa_base_unsigned(uintmax_t n, int base)
 {
-	char	*str;
+	uintmax_t		nbr;
+	long			len;
+	char			*str;
 
-	if (s == NULL)
-		return ;
-	str = (char *)s;
-	write(1, str, ft_strlen(str));
+	len = 0;
+	nbr = n;
+	while (nbr)
+	{
+		len++;
+		nbr /= base;
+	}
+	str = ft_strnew(len);
+	str[len] = '\0';
+	while (n)
+	{
+		str[--len] = "0123456789abcdef"[n % base];
+		n /= base;
+	}
+	return (str);
 }
+
